@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useRef, useState } from 'react'
-import { Canvas, useFrame, ThreeElements, useThree } from '@react-three/fiber'
+import { Suspense, useRef } from 'react'
+import { Canvas } from '@react-three/fiber'
 import { useDrag } from '@use-gesture/react';
 import { Physics, RapierRigidBody, RigidBody } from '@react-three/rapier';
 
@@ -19,6 +19,7 @@ function SpinnerBody() {
     <RigidBody
       ref={rigidBody}
       angularDamping={1.0}>
+      {/* @ts-ignore https://github.com/pmndrs/use-gesture/issues/374 */}
       <mesh
         {...bind()}>
         <boxGeometry />
